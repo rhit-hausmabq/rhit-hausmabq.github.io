@@ -23,7 +23,7 @@
 
 p {
     text-align: center;
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
 h1{
@@ -32,9 +32,16 @@ h1{
 }
 
 img{
-    width: 250px;
+    width: 325px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-link:visited {
+.link:visited {
     color: violet;
+}
+
+.footer{
+    font-size: 1em;
 }
