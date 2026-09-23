@@ -23,14 +23,18 @@
 
 p {
     text-align: center;
-    font-size: 1.5em;
+    font-size: 3em;
 }
 
 h1{
     text-align: center;
-    font-size: 2em;
+    font-size: 2.5em;
 }
 
 img{
-    text-align: center;
+    width: 250px;
+}
+
+link:visited {
+    color: violet;
 }
