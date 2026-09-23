@@ -6,11 +6,12 @@
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=yes">
     <title>Brody Hausman</title>
     <link rel="stylesheet" type="text/css" href="styles.css"></li>
+    <?php include 'func.php';?>
 </head>
 
 <header>
     <nav>
-        <?php include 'func.php';?>
+        <?php handleHeader(); ?>
     </nav>
 </header>
 
@@ -22,7 +23,7 @@
 </body>
 
 <footer>
-    <p class="footer"></p>
+    <p class="footer"><?php handleFooter();?></p>
 </footer>
 
 </html>
