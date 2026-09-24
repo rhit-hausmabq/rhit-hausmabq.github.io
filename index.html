@@ -8,8 +8,12 @@
     <link rel="stylesheet" type="text/css" href="styles.css"></li>
 </head>
 
-<header>
-    <iframe src="header.html" seamless></iframe>
+<header id="title-and-nav">
+    <script>
+        fetch("header.html");
+        then(response => response.text());
+        then(html => document.getElementById("title-and-nav").innerHTML = html)
+    </script>
 </header>
 
 <body>
@@ -19,8 +23,12 @@
     </div>
 </body>
 
-<footer>
-    <iframe src="footer.html" seamless></iframe>
+<footer id="bonus-links">
+    <script>
+        fetch("footer.html");
+        then(response => response.text());
+        then(html => document.getElementById("bonus-links").innerHTML = html)
+    </script>
 </footer>
 
 </html>
