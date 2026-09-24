@@ -7,18 +7,14 @@
 	</head>
 <header>
     <script>
-        fetch("header.html");
-        then(response => response.text());
-        then(html => document.getElementById("title-and-nav").innerHTML = html)
+        fetch("header.html").then(response => response.text()).then(html => document.getElementById("title-and-nav").innerHTML = html)
     </script>
 </header>
 <body>
 </body>
 <footer>
      <script>
-        fetch("footer.html");
-        then(response => response.text());
-        then(html => document.getElementById("bonus-links").innerHTML = html)
+        fetch("footer.html").then(response => response.text()).then(html => document.getElementById("bonus-links").innerHTML = html)
     </script>
 </footer>
 </html>
