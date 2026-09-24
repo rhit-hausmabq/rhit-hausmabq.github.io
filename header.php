@@ -4,6 +4,4 @@ function handleHeader(){
     echo "<h1>Brody Hausman</h1><div class="buttons"><button class="nav-button" onclick="window.location.href = 'https://rhit-hausmabq.github.io/resume.html'">Resume</button><button class="nav-button" onclick="window.location.href = 'https://rhit-hausmabq.github.io/'">Main</button><button class="nav-button" onclick="window.location.href = 'https://rhit-hausmabq.github.io/portfolio.html'">Portfolio</button></div>";
 };
 
-function handleFooter(){
-    echo "Find me on <a class="link" href="https://www.linkedin.com/in/brody-hausman-5388993b6/">LinkedIn</a>";
-};
+handleHeader();
