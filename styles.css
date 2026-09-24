@@ -53,3 +53,7 @@ img{
 .main-text{
     text-align: center;
 }
+
+iframe[seamless]{
+    border: none;
+}
