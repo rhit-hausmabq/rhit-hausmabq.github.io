@@ -71,7 +71,7 @@ enter_button.addEventListener("click", function(){
         input.type = "text";
         let inputData = document.createElement("td");
         inputData.appendChild(input);
-        row.appendChild(input);
+        row.appendChild(inputData);
         table.appendChild(row);
         sleepLoop++;
 
@@ -89,7 +89,7 @@ save.addEventListener("click", function(){
     let saveDataString = "";
     let tableRows = document.getElementById("table").children;
     for(let row of tableRows) {
-        saveDataString = saveDataString + row.children[0].innerHTML + "  -  " + row.children[1].value + ", ";
+        saveDataString = saveDataString + row.children[0].innerHTML + "  -  " + row.children[1].children[0].value + ", ";
     }
     localStorage.setItem("scheduleData", saveDataString);
     let test = document.getElementById("test");
@@ -108,14 +108,16 @@ window.addEventListener("DOMContentLoaded", function(){
         let rowEntries = value.split("  -  ");
         let time = document.createElement("td");
         let input = document.createElement("input");
+        let inputData = document.getElementById("td");
         let row = document.createElement("tr");
         if(rowEntries[1] === null || rowEntries[1] == null || rowEntries[0] === null || rowEntries[0] == null){
             continue;
         }
         time.innerHTML = rowEntries[0];
         input.value = rowEntries[1];
+        inputData.appendChild(input);
         row.appendChild(time);
-        row.appendChild(input);
+        row.appendChild(inputData);
         table.appendChild(row);
     }
     save.removeAttribute("hidden");
