@@ -5,9 +5,11 @@
     <title>Resume</title>
     <link rel="stylesheet" type="text/css" href="styles.css"></li>
 	</head>
-<header>
+<header id="title-and-nav">
     <script>
-        fetch("header.html").then(response => response.text()).then(html => document.getElementById("title-and-nav").innerHTML = html)
+        let response = fetch("header.html");
+        let text = await response.text();
+        getElementById("title-and-nav").innerHTML = text;
     </script>
 </header>
 <body>
@@ -43,9 +45,11 @@
     </section>
 
 </body>
-<footer>
-     <script>
-        fetch("footer.html").then(response => response.text()).then(html => document.getElementById("bonus-links").innerHTML = html)
+<footer id="bonus-links">
+    <script>
+        let response2 = fetch("footer.html");
+        let text2 = await response.text();
+        getElementById("bonus-links").innerHTML = text;
     </script>
 </footer>
 </html>
