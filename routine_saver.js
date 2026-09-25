@@ -84,12 +84,12 @@ enter_button.addEventListener("click", function(){
 let save = document.getElementById("save");
 save.addEventListener("click", function(){
     let message = document.getElementById("save-message");
-    message.innerHTML = "Saving...";
+    message.innerHTML = "Saving2...";
     localStorage.clear();
     let saveDataString = "";
     let tableRows = document.getElementById("table").children;
     for(row of tableRows) {
-        saveDataString = saveDataString + row[0].innerHTML + " " + row[1].value + ", ";
+        saveDataString = saveDataString + row[0].value + " " + row[1].value + ", ";
     }
     localStorage.setItem("scheduleData", saveDataString);
     message.innerHTML = "Schedule data successfully saved!";
