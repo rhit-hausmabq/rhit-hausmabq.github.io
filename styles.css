@@ -1,7 +1,7 @@
 .nav-button {
     background-color: lightgray;
     width: 25%;
-    height: 10%;
+    height: 75px;
     border: none;
     font-size: 3em;
     font-family: 'Times New Roman', Times, serif;
@@ -26,7 +26,7 @@
 
 p {
     text-align: left;
-    font-size: 2em;
+    font-size: 1.25em;
 }
 
 h1{
@@ -56,4 +56,12 @@ img{
 
 iframe[seamless]{
     border: none;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+li {
+    font-size: 1.25em;
 }
