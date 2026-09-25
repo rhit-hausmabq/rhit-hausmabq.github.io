@@ -15,6 +15,11 @@ enter_button.addEventListener("click", function(){
 
     // Making the table 
     let table = document.getElementById("table");
+    if(table.childElementCount != 0){
+        for(child of table.children){
+            table.removeChild(child);
+        }
+    }
     let timeHeader = document.createElement("th");
     let inputHeader = document.createElement("th");
     let headerRow = document.createElement("tr");
@@ -73,8 +78,40 @@ enter_button.addEventListener("click", function(){
         sleepLoop++;
 
     }
-    table.removeAttribute(hidden);
     // Makes the save button appear after the table appears
     let save = document.getElementById("save");
-    save.removeAttribute(hidden);
+    save.removeAttribute("hidden");
+});
+
+let save = document.getElementById("save");
+save.addEventListener("click", function(){
+    localStorage.clear();
+    let saveDataString = "";
+    let tableRows = document.getElementById("table").children;
+    for(row of tableRows){
+        saveDataString = saveDataString + row[0].innerHTML + " " + row[1].innerHTML + ", ";
+    }
+    localStorage.setItem("scheduleData", saveDataString);
+
+});
+
+window.addEventListener("DOMContentLoaded", function(){
+    if(localStorage.getItem("scheduleData") == null || localStorage.getItem("scheduleData") === null){
+        return;
+    }
+    let rowValues = localStorage.getItem("scheduleData").split(", ");
+    let table = document.getElementById("table");
+    for(value of rowValues){
+        let rowEntries = value.split(" ");
+        let time = document.createElement("td");
+        let inputData = document.createElement("td");
+        let input = document.createElement("input");
+        let row = document.createElement("tr");
+        time.innerHTML = rowEntries[0];
+        input.innerHTML = rowEntries[1];
+        inputData.appendChild(input);
+        row.appendChild(time);
+        row.appendChild(inputData);
+    }
+    save.removeAttribute("hidden");
 });
