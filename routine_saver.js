@@ -15,7 +15,7 @@ enter_button.addEventListener("click", function(){
 
     // Making the table 
     let schedule = document.getElementById("schedule");
-    let table = document.createAttribute("table");
+    let table = document.getElementById("table");
     let timeHeader = document.createAttribute("th");
     let inputHeader = document.createAttribute("th");
     let headerRow = document.createAttribute("tr");
@@ -23,7 +23,6 @@ enter_button.addEventListener("click", function(){
     inputHeader.innerHTML = "Things To Do";
     headerRow.appendChild(timeHeader);
     headerRow.appendChild(inputHeader);
-    schedule.appendChild(table);
 
     // Loops through the table to create rows based on wake up time
     while(wakeTime <= 15){
@@ -75,7 +74,8 @@ enter_button.addEventListener("click", function(){
         sleepLoop++;
 
     }
+    table.removeAttribute(hidden);
     // Makes the save button appear after the table appears
     let save = document.getElementById("save");
-    save.removeAttribute("hidden");
+    save.removeAttribute(hidden);
 });
