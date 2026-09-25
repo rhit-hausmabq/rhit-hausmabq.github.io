@@ -101,6 +101,8 @@ window.addEventListener("DOMContentLoaded", function(){
     if(localStorage.getItem("scheduleData") == null || localStorage.getItem("scheduleData") === null){
         return;
     }
+    let message = document.getElementById("save-message");
+    message.innerHTML = "trying to load from saved data";
     let rowValues = localStorage.getItem("scheduleData").split(", ");
     let table = document.getElementById("table");
     for(let value of rowValues){
