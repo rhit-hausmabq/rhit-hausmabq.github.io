@@ -16,9 +16,7 @@ enter_button.addEventListener("click", function(){
     // Making the table 
     let table = document.getElementById("table");
     if(table.childElementCount != 0){
-        for(child of table.children){
-            table.removeChild(child);
-        }
+        table.replaceChildren();
     }
     let timeHeader = document.createElement("th");
     let inputHeader = document.createElement("th");
