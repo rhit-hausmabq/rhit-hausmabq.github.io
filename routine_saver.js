@@ -89,7 +89,7 @@ save.addEventListener("click", function(){
     let saveDataString = "";
     let tableRows = document.getElementById("table").children;
     for(row of tableRows) {
-        saveDataString = saveDataString + row[0].value + " " + row[1].innerHTML + ", ";
+        saveDataString = saveDataString + row[0].innerHTML + " " + row[1].value + ", ";
     }
     localStorage.setItem("scheduleData", saveDataString);
     message.innerHTML = "Schedule data successfully saved!";
