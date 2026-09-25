@@ -90,7 +90,8 @@ save.addEventListener("click", function(){
         saveDataString = saveDataString + row[0].innerHTML + " " + row[1].innerHTML + ", ";
     }
     localStorage.setItem("scheduleData", saveDataString);
-
+    let message = document.getElementById("save-message");
+    message.innerHTML = "Schedule data successfully saved!";
 });
 
 window.addEventListener("DOMContentLoaded", function(){
