@@ -84,7 +84,7 @@ enter_button.addEventListener("click", function(){
 let save = document.getElementById("save");
 save.addEventListener("click", function(){
     let message = document.getElementById("save-message");
-    message.innerHTML = "Saving5...";
+    message.innerHTML = "Saving6...";
     localStorage.clear();
     let saveDataString = "";
     let tableRows = document.getElementById("table").children;
