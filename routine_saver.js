@@ -67,8 +67,9 @@ enter_button.addEventListener("click", function(){
             timeData.innerHTML = sleepLoop + ":00 PM";
         }
         row.appendChild(timeData);
-        let input = document.createElement("input");
-        input.type = "text";
+        let input = document.createElement("textarea");
+        input.rows = 3;
+        input.cols = 50;
         let inputData = document.createElement("td");
         inputData.appendChild(input);
         row.appendChild(inputData);
@@ -84,7 +85,6 @@ enter_button.addEventListener("click", function(){
 let save = document.getElementById("save");
 save.addEventListener("click", function(){
     let message = document.getElementById("save-message");
-    message.innerHTML = "Saving..."
     localStorage.clear();
     let saveDataString = "";
     let tableRows = document.getElementById("table").children;
@@ -92,9 +92,6 @@ save.addEventListener("click", function(){
         saveDataString = saveDataString + row.children[0].innerHTML + "  -  " + row.children[1].children[0].value + ", ";
     }
     localStorage.setItem("scheduleData", saveDataString);
-    let test = document.getElementById("test");
-    test.innerHTML = saveDataString;
-    
     message.innerHTML = "Schedule data successfully saved!";
 });
 
@@ -107,7 +104,7 @@ window.addEventListener("DOMContentLoaded", function(){
     for(let value of rowValues){
         let rowEntries = value.split("  -  ");
         let time = document.createElement("td");
-        let input = document.createElement("input");
+        let input = document.createElement("textarea");
         let inputData = document.getElementById("td");
         let row = document.createElement("tr");
         if(rowEntries[1] === null || rowEntries[1] == null || rowEntries[0] === null || rowEntries[0] == null){
