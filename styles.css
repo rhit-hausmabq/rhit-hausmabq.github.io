@@ -65,3 +65,7 @@ h2 {
 li {
     font-size: 1.25em;
 }
+
+hr {
+    background-color: lightsalmon;
+}
