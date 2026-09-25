@@ -103,7 +103,7 @@ window.addEventListener("DOMContentLoaded", function(){
     }
     let rowValues = localStorage.getItem("scheduleData").split(", ");
     let table = document.getElementById("table");
-    for(value of rowValues){
+    for(let value of rowValues){
         let rowEntries = value.split(" ");
         let time = document.createElement("td");
         let inputData = document.createElement("td");
@@ -114,6 +114,7 @@ window.addEventListener("DOMContentLoaded", function(){
         inputData.appendChild(input);
         row.appendChild(time);
         row.appendChild(inputData);
+        table.appendChild(row);
     }
     save.removeAttribute("hidden");
 });
