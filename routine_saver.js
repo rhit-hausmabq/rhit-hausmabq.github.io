@@ -107,7 +107,6 @@ window.addEventListener("DOMContentLoaded", function(){
     for(let value of rowValues){
         let rowEntries = value.split("  -  ");
         let time = document.createElement("td");
-        let inputData = document.createElement("td");
         let input = document.createElement("input");
         let row = document.createElement("tr");
         if(rowEntries[1] === null || rowEntries[1] == null || rowEntries[0] === null || rowEntries[0] == null){
@@ -115,9 +114,8 @@ window.addEventListener("DOMContentLoaded", function(){
         }
         time.innerHTML = rowEntries[0];
         input.value = rowEntries[1];
-        inputData.appendChild(input);
         row.appendChild(time);
-        row.appendChild(inputData);
+        row.appendChild(input);
         table.appendChild(row);
     }
     save.removeAttribute("hidden");
