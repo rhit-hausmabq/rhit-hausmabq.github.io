@@ -15,9 +15,9 @@ enter_button.addEventListener("click", function(){
 
     // Making the table 
     let table = document.getElementById("table");
-    let timeHeader = document.createAttribute("th");
-    let inputHeader = document.createAttribute("th");
-    let headerRow = document.createAttribute("tr");
+    let timeHeader = document.createElement("th");
+    let inputHeader = document.createElement("th");
+    let headerRow = document.createElement("tr");
     timeHeader.innerHTML = "Time";
     inputHeader.innerHTML = "Things To Do";
     headerRow.appendChild(timeHeader);
@@ -26,8 +26,8 @@ enter_button.addEventListener("click", function(){
     // Loops through the table to create rows based on wake up time
     while(wakeTime <= 15){
 
-        let row = document.createAttribute("tr");
-        let timeData = document.createAttribute("td");
+        let row = document.createElement("tr");
+        let timeData = document.createElement("td");
         if(wakeTime > 12) {
             timeData.innerHTML = wakeTime - 12 + ":00 PM";
         } 
@@ -38,9 +38,9 @@ enter_button.addEventListener("click", function(){
             timeData.innerHTML = wakeTime + ":00 AM";
         }
         row.appendChild(timeData);
-        let input = document.createAttribute("input");
+        let input = document.createElement("input");
         input.type = "text";
-        let inputData = document.createAttribute("td");
+        let inputData = document.createElement("td");
         inputData.appendChild(input);
         row.appendChild(input);
         table.appendChild(row);
@@ -52,8 +52,8 @@ enter_button.addEventListener("click", function(){
     sleepLoop = 4; // Min value for sleep time
     while(sleepLoop <= sleepTime){
 
-        let row = document.createAttribute("tr");
-        let timeData = document.createAttribute("td");
+        let row = document.createElement("tr");
+        let timeData = document.createElement("td");
         if(sleepLoop > 12) {
             timeData.innerHTML = sleepLoop - 12 + ":00 AM";
         } 
@@ -64,9 +64,9 @@ enter_button.addEventListener("click", function(){
             timeData.innerHTML = sleepLoop + ":00 PM";
         }
         row.appendChild(timeData);
-        let input = document.createAttribute("input");
+        let input = document.createElement("input");
         input.type = "text";
-        let inputData = document.createAttribute("td");
+        let inputData = document.createElement("td");
         inputData.appendChild(input);
         row.appendChild(input);
         table.appendChild(row);
