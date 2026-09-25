@@ -84,14 +84,16 @@ enter_button.addEventListener("click", function(){
 let save = document.getElementById("save");
 save.addEventListener("click", function(){
     let message = document.getElementById("save-message");
-    message.innerHTML = "Saving4...";
+    message.innerHTML = "Saving5...";
     localStorage.clear();
     let saveDataString = "";
     let tableRows = document.querySelectorAll("tr");
     for(row of tableRows) {
-        saveDataString = saveDataString + row[0].innerHTML + " " + row[1].innerHTML + ", ";
+        saveDataString = saveDataString + row[0] + " " + row[1] + ", ";
     }
     localStorage.setItem("scheduleData", saveDataString);
+    let test = document.getElementById("test");
+    test.innerHTML = saveDataString;
     message.innerHTML = "Schedule data successfully saved!";
 });
 
