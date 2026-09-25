@@ -7,18 +7,22 @@
 	</head>
 <header id="title-and-nav">
     <script>
-        let response = fetch("header.html");
-        let text = await response.text();
-        getElementById("title-and-nav").innerHTML = text;
+        fetch("header.html").then(function(response) {
+            return response.text();
+        }).then(function(text){
+            document.getElementById("title-and-nav").innerHTML = text;
+        });
     </script>
 </header>
 <body>
 </body>
 <footer id="bonus-links">
     <script>
-        let response2 = fetch("footer.html");
-        let text2 = await response.text();
-        getElementById("bonus-links").innerHTML = text;
+        fetch("footer.html").then(function(response) {
+            return response.text();
+        }).then(function(text){
+            document.getElementById("bonus-links").innerHTML = text;
+        });
     </script>
 </footer>
 </html>
