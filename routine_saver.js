@@ -14,7 +14,6 @@ enter_button.addEventListener("click", function(){
     }
 
     // Making the table 
-    let schedule = document.getElementById("schedule");
     let table = document.getElementById("table");
     let timeHeader = document.createAttribute("th");
     let inputHeader = document.createAttribute("th");
