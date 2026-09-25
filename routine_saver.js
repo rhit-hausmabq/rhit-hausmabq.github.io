@@ -83,8 +83,6 @@ enter_button.addEventListener("click", function(){
 
 let save = document.getElementById("save");
 save.addEventListener("click", function(){
-    let message = document.getElementById("save-message");
-    message.innerHTML = "Saving6...";
     localStorage.clear();
     let saveDataString = "";
     let tableRows = document.getElementById("table").children;
@@ -94,6 +92,7 @@ save.addEventListener("click", function(){
     localStorage.setItem("scheduleData", saveDataString);
     let test = document.getElementById("test");
     test.innerHTML = saveDataString;
+    let message = document.getElementById("save-message");
     message.innerHTML = "Schedule data successfully saved!";
 });
 
@@ -101,8 +100,6 @@ window.addEventListener("DOMContentLoaded", function(){
     if(localStorage.getItem("scheduleData") == null || localStorage.getItem("scheduleData") === null){
         return;
     }
-    let message = document.getElementById("save-message");
-    message.innerHTML = "trying to load from saved data";
     let rowValues = localStorage.getItem("scheduleData").split(", ");
     let table = document.getElementById("table");
     for(let value of rowValues){
