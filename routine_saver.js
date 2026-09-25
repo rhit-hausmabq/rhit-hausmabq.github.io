@@ -6,11 +6,11 @@ enter_button.addEventListener("click", function(){
     let bedTime = document.getElementById("bed-time");
     let wakeTime = parseInt(wakeUp.value);
     if(wakeTime == 1 || wakeTime == 2 || wakeTime == 3){
-        wakeTime += 12;
+        wakeTime = wakeTime + 12;
     }
     let sleepTime = parseInt(bedTime.value);
     if(sleepTime == 1 || sleepTime == 2 || sleepTime == 3){
-        sleepTime += 12;
+        sleepTime = sleepTime + 12;
     }
 
     // Making the table 
@@ -31,11 +31,13 @@ enter_button.addEventListener("click", function(){
         else{
             timeData.innerHTML = wakeTime + ":00 AM";
         }
+        row.appendChild(timeData);
         let input = document.createAttribute("input");
         input.type = "text";
         let inputData = document.createAttribute("td");
         inputData.appendChild(input);
-        row(input)
+        row.appendChild(input);
+        table.appendChild(row);
         wakeTime++;
 
     }
@@ -55,14 +57,17 @@ enter_button.addEventListener("click", function(){
         else{
             timeData.innerHTML = sleepLoop + ":00 PM";
         }
+        row.appendChild(timeData);
         let input = document.createAttribute("input");
         input.type = "text";
         let inputData = document.createAttribute("td");
         inputData.appendChild(input);
-        row(input)
+        row.appendChild(input);
+        table.appendChild(row);
         sleepLoop++;
 
     }
+    schedule.appendChild(table);
     // Makes the save button appear after the table appears
     let save = document.getElementById("save");
     save.removeAttribute("hidden");
