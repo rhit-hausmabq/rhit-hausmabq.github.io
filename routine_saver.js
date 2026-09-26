@@ -107,7 +107,7 @@ window.addEventListener("DOMContentLoaded", function(){
             continue;
         }
         time.innerHTML = rowEntries[0];
-        input.value = rowEntries[1];
+        input.innerHTML = rowEntries[1];
         inputData.appendChild(input);
         row.appendChild(time);
         row.appendChild(inputData);
