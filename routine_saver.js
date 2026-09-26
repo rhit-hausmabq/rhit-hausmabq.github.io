@@ -83,7 +83,7 @@ save.addEventListener("click", function(){
     let saveDataString = "";
     let tableRows = document.getElementById("table").children;
     for(let row of tableRows) {
-        saveDataString = saveDataString + row.children[0].innerHTML + "  -  " + row.children[1].children[0].innerHTML + "&&";
+        saveDataString = saveDataString + row.children[0].innerHTML + "  -  " + row.children[1].children[0].value + "&&";
     }
     localStorage.setItem("scheduleData", saveDataString);
     message.innerHTML = "Schedule data successfully saved!";
@@ -108,7 +108,7 @@ window.addEventListener("DOMContentLoaded", function(){
         }
         time.innerHTML = rowEntries[0];
         input.innerHTML = rowEntries[1];
-        inputData.append(input);
+        inputData.appendChild(input);
         row.appendChild(time);
         row.appendChild(inputData);
         table.appendChild(row);
