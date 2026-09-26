@@ -35,7 +35,7 @@ enter_button.addEventListener("click", function(){
         }
         row.appendChild(timeData);
         let input = document.createElement("textarea");
-        input.rows = 3;
+        input.rows = 1;
         input.cols = 50;
         let inputData = document.createElement("td");
         inputData.appendChild(input);
@@ -62,7 +62,7 @@ enter_button.addEventListener("click", function(){
         }
         row.appendChild(timeData);
         let input = document.createElement("textarea");
-        input.rows = 3;
+        input.rows = 1;
         input.cols = 50;
         let inputData = document.createElement("td");
         inputData.appendChild(input);
@@ -99,7 +99,7 @@ window.addEventListener("DOMContentLoaded", function(){
         let rowEntries = value.split("  -  ");
         let time = document.createElement("td");
         let input = document.createElement("textarea");
-        input.rows = 3;
+        input.rows = 1;
         input.cols = 50;
         let inputData = document.getElementById("td");
         let row = document.createElement("tr");
