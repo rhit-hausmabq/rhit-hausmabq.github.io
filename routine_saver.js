@@ -108,7 +108,7 @@ window.addEventListener("DOMContentLoaded", function(){
         input.cols = 50;
         input.name = "saved" + int;
         input.id = "saved" + int;
-        let inputData = document.getElementById("td");
+        let inputData = document.createElement("td");
         let row = document.createElement("tr");
         if(rowEntries[1] === null || rowEntries[1] == null || rowEntries[0] === null || rowEntries[0] == null){
             continue;
