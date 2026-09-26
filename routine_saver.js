@@ -37,6 +37,8 @@ enter_button.addEventListener("click", function(){
         let input = document.createElement("textarea");
         input.rows = 1;
         input.cols = 50;
+        input.name = "wake" + wakeTime;
+        input.id = "wake" + wakeTime;
         let inputData = document.createElement("td");
         inputData.appendChild(input);
         row.appendChild(inputData);
@@ -64,6 +66,8 @@ enter_button.addEventListener("click", function(){
         let input = document.createElement("textarea");
         input.rows = 1;
         input.cols = 50;
+        input.name = "sleep" + sleepLoop;
+        input.id = "sleep" + sleepLoop;
         let inputData = document.createElement("td");
         inputData.appendChild(input);
         row.appendChild(inputData);
@@ -95,12 +99,15 @@ window.addEventListener("DOMContentLoaded", function(){
     }
     let rowValues = localStorage.getItem("scheduleData").split("&&");
     let table = document.getElementById("table");
+    let int = 0;
     for(let value of rowValues){
         let rowEntries = value.split("  -  ");
         let time = document.createElement("td");
         let input = document.createElement("textarea");
         input.rows = 1;
         input.cols = 50;
+        input.name = "saved" + int;
+        input.id = "saved" + int;
         let inputData = document.getElementById("td");
         let row = document.createElement("tr");
         if(rowEntries[1] === null || rowEntries[1] == null || rowEntries[0] === null || rowEntries[0] == null){
@@ -112,6 +119,7 @@ window.addEventListener("DOMContentLoaded", function(){
         row.appendChild(time);
         row.appendChild(inputData);
         table.appendChild(row);
+        int++;
     }
     save.removeAttribute("hidden");
 });
