@@ -18,13 +18,6 @@ enter_button.addEventListener("click", function(){
     if(table.childElementCount != 0){
         table.replaceChildren();
     }
-    let timeHeader = document.createElement("th");
-    let inputHeader = document.createElement("th");
-    let headerRow = document.createElement("tr");
-    timeHeader.innerHTML = "Time";
-    inputHeader.innerHTML = "Things To Do";
-    headerRow.appendChild(timeHeader);
-    headerRow.appendChild(inputHeader);
 
     // Loops through the table to create rows based on wake up time
     while(wakeTime <= 15){
@@ -41,11 +34,12 @@ enter_button.addEventListener("click", function(){
             timeData.innerHTML = wakeTime + ":00 AM";
         }
         row.appendChild(timeData);
-        let input = document.createElement("input");
-        input.type = "text";
+        let input = document.createElement("textarea");
+        input.rows = 3;
+        input.cols = 50;
         let inputData = document.createElement("td");
         inputData.appendChild(input);
-        row.appendChild(input);
+        row.appendChild(inputData);
         table.appendChild(row);
         wakeTime++;
 
@@ -89,7 +83,7 @@ save.addEventListener("click", function(){
     let saveDataString = "";
     let tableRows = document.getElementById("table").children;
     for(let row of tableRows) {
-        saveDataString = saveDataString + row.children[0].innerHTML + "  -  " + row.children[1].children[0].value + ", ";
+        saveDataString = saveDataString + row.children[0].innerHTML + "  -  " + row.children[1].children[0].value + "&&";
     }
     localStorage.setItem("scheduleData", saveDataString);
     message.innerHTML = "Schedule data successfully saved!";
@@ -99,12 +93,14 @@ window.addEventListener("DOMContentLoaded", function(){
     if(localStorage.getItem("scheduleData") == null || localStorage.getItem("scheduleData") === null){
         return;
     }
-    let rowValues = localStorage.getItem("scheduleData").split(", ");
+    let rowValues = localStorage.getItem("scheduleData").split("&&");
     let table = document.getElementById("table");
     for(let value of rowValues){
         let rowEntries = value.split("  -  ");
         let time = document.createElement("td");
         let input = document.createElement("textarea");
+        input.rows = 3;
+        input.cols = 50;
         let inputData = document.getElementById("td");
         let row = document.createElement("tr");
         if(rowEntries[1] === null || rowEntries[1] == null || rowEntries[0] === null || rowEntries[0] == null){
